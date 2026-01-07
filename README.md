@@ -1,91 +1,133 @@
-# smARtABIC-Agent
+smARtABIC-Agent
+Arabic Retrieval-Augmented Question Answering System
 
-An Arabic Retrieval-Augmented Generation (RAG) system for Arabic Question Answering.
+مشروع التتخرج الأول – جامعة الرشيد الدولية الخاصة للعلوم والتكنولوجيا – كلية هندسة المعلوماتية – 
+العام الدراسي: 2026
 
-This project retrieves relevant Arabic knowledge using semantic search (FAISS + E5 embeddings) and generates grounded answers for user queries.
+👩‍💻 إعداد الطالبات
 
----
+الطالبة: براءة حمزة
 
-## ✨ Features
+الطالبة: مريم ملص
 
-- Arabic semantic retrieval using E5 embeddings  
-- FAISS vector search  
-- Robust handling of unknown questions  
-- Fully offline deployment  
-- Interactive Web Interface  
+الطالبة: وفاء بني المرجة
 
----
+👨‍🏫 بإشراف
 
-## 📊 Dataset
+الدكتور: وسيم صافي
 
-We use a cleaned Arabic QA dataset split into training and evaluation subsets.  
-The system was evaluated on unseen validation samples.
+🧠 فكرة المشروع
 
----
+مشروع smARtABIC هو نظام سؤال وجواب ذكي باللغة العربية يعتمد على تقنية:
+Retrieval-Augmented Generation (RAG)
+حيث يقوم باسترجاع المقاطع الأكثر ارتباطًا بالسؤال باستخدام البحث الدلالي ثم توليد إجابة مستندة إلى المعرفة المتاحة دون هلوسة أو تخمين.
 
-## 🛠 Requirements
+🔐 ميزة أساسية مهمة جدًا :
+النظام يعمل محليًا بالكامل (On-Premise Deployment) دون إرسال أي بيانات إلى خوادم خارجية، مما يحافظ على خصوصية البيانات ويجعله مناسبًا للبنوك، المؤسسات الحكومية، الجامعات، والشركات الحسّاسة التي لا يمكنها مشاركة بياناتها مع خدمات سحابية.
 
-1. Python **3.9** or higher  
-2. `pip`
+✨ Features
 
----
+🔎 Arabic Semantic Retrieval باستخدام E5 Embeddings
 
-## 📥 Installation
+⚡ FAISS Vector Search للبحث عالي الكفاءة
 
-1. Download the project or clone it:
+🛡️ منع الهلوسة وإجابات “لا أعلم” للأسئلة خارج المعرفة
 
-```bash
-git clone https://github.com/EngMar26/smARtABIC-Agent.git
+📴 تشغيل كامل بدون إنترنت
+
+💻 واجهة استخدام تفاعلية
+
+🧵 دعم النصوص العربية ومعالجتها بشكل مدروس
+
+📊 Dataset
+
+يعتمد النظام على بيانات Arabic QA dataset تم تنظيفها ومعالجتها بحيث:
+
+تقسيم البيانات إلى تدريب وتقييم
+
+اختبار النظام على عينات لم تُستخدم أثناء التدريب
+
+ضمان عدالة التقييم وموثوقيته
+
+🛠 Requirements
+
+Python 3.9 أو أعلى
+
+تثبيت المكتبات التالية (موجودة في requirements.txt)
+
+📥 Installation
+1️⃣ تحميل المشروع
+git clone https://github.com/AIProjects3/smARtABIC-Agent.git
 cd smARtABIC-Agent
 
-2.Install required libraries:
-   pip install -r requirements.txt
-
----
+2️⃣ تثبيت المتطلبات
+pip install -r requirements.txt
 
 ▶️ How to Run the System
 
-From the project folder, run:
-  python -m uvicorn app.server:app --host 127.0.0.1 --port 8000
+من داخل مجلد المشروع:
 
-Then open your browser at:
-   http://127.0.0.1:8000
+python -m uvicorn app.server:app --host 127.0.0.1 --port 8000
 
-You can now ask questions in Arabic.
 
----
+ثم افتح المتصفح وانتقل إلى:
+
+http://127.0.0.1:8000
+
+
+الآن يمكنك طرح الأسئلة باللغة العربية ✨
 
 🌐 Offline Usage
-This system works fully offline after installation:
- All models and indices are stored locally
- No internet connection is required for answering questions
- Suitable for demonstrations and presentations without network access
 
----
+هذا النظام يعمل أوفلاين بالكامل بعد التثبيت:
+
+جميع النماذج مخزنة محليًا
+
+لا يتم إرسال أي بيانات خارج الجهاز
+
+مناسب للعروض التقديمية والبيئات المغلقة
+
+يحافظ على خصوصية البيانات الحساسة
 
 📁 Project Structure
 smARtABIC-Agent/
 │
-├── app/            # Backend and web interface
-├── data/           # FAISS index, chunks, logo, assets
-├── results/        # Evaluation results and screenshots
+├── app/            # Backend + QA logic + API
+├── data/           # FAISS index, embeddings, chunks, logo, assets
+├── results/        # Evaluation results + screenshots
+├── docs/           # Project report + documentation
 ├── requirements.txt
 └── README.md
 
----
-
 🧪 Evaluation Summary
-  Evaluation was performed on unseen validation samples.
-    Recall@5 ≈ 0.23
-    Recall@10 ≈ 0.30
-    Don't-know rate ≈ 0.03
 
-Screenshots of results are available in the results/ folder.
+تم تقييم النظام على بيانات اختبار غير مستخدمة سابقًا:
 
----
+Recall@5 ≈ 0.23
 
-🎓 Graduation Project
+Recall@10 ≈ 0.30
 
-This system represents the final submission version of the graduation project
-titled:
+Don't-know response rate ≈ 0.03
+
+📎 لقطات التقييم موجودة داخل:
+results/
+
+🔐 Data Privacy Statement
+
+هذا المشروع مصمم ليعمل داخل بيئات تشغيل خاصة دون الاعتماد على خدمات سحابية خارجية، وذلك لضمان:
+
+حماية البيانات الحساسة
+
+إمكانية استخدام النظام داخل المؤسسات والبنوك
+
+التحكم الكامل بالبيانات والمعالجة داخليًا
+
+📬 للتواصل
+
+GitHub: https://github.com/AIProjects3
+
+Project Repository: https://github.com/AIProjects3/smARtABIC-Agent
+
+
+🎓 هذا المشروع يمثل النسخة النهائية لمشروع التخرج بعنوان:
 smARtABIC: An Offline Arabic Retrieval-Augmented Intelligent Agent
