@@ -92,11 +92,17 @@ http://127.0.0.1:8000
 📁 Project Structure
 smARtABIC-Agent/
 │
+
 ├── app/            # Backend + QA logic + API
+
 ├── data/           # FAISS index, embeddings, chunks, logo, assets
+
 ├── results/        # Evaluation results + screenshots
+
 ├── docs/           # Project report + documentation
+
 ├── requirements.txt
+
 └── README.md
 
 🧪 Evaluation Summary
@@ -131,3 +137,4 @@ Project Repository: https://github.com/AIProjects3/smARtABIC-Agent
 
 🎓 هذا المشروع يمثل النسخة النهائية لمشروع التخرج بعنوان:
 smARtABIC: An Offline Arabic Retrieval-Augmented Intelligent Agent
+
